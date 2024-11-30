@@ -18,7 +18,7 @@ management:
 service:
   jwt:
     access-expiration: 7200000
-    secret-key: "${JWT_SECRET_KEY}"
+    secret-key: "${service.jwt.secret-key}"
 
 server:
   port: 19095
