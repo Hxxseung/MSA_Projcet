@@ -37,14 +37,13 @@ public class OrderService {
 
 
     @Transactional
-    @CachePut(cacheNames = "orderCache", key = "args[0]")
+    @CachePut(cacheNames = "orderCache", key = "#orderId", unless = "#result == null")
     public void updateOrder(Long orderId, Long productId) {
         Order order = orderRepository.findById(orderId).orElseThrow();
 
         List<OrderProduct> orderProducts = vaildProduct(order, List.of(productId));
         order.setOrderProducts(orderProducts);
 
-        order.addProduct(OrderProduct.createOrderProduct(order, productId));
         orderRepository.save(order);
     }
 
