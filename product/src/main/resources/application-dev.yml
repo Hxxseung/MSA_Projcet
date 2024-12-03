@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/msaexam
+    username: kangheeseung
+    password: 1129
+  data:
+    redis:
+      host: localhost
+      username: heeseung
+      password: 1129
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
