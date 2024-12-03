@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://your-rds-endpoint.region.rds.amazonaws.com:5432/msaexam
+    username: ${PROD_DB_USERNAME}
+    password: ${PROD_DB_PASSWORD}
+  data:
+    redis:
+      host: ${PROD_REDIS_HOST}
+      username: ${PROD_REDIS_USERNAME}
+      password: ${PROD_REDIS_PASSWORD}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-prod-server:19090/eureka/
+
+management:
+  zipkin:
+    tracing:
+      endpoint: "http://zipkin-prod-server:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0

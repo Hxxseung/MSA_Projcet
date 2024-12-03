@@ -1,12 +1,8 @@
-# 활성화할 프로필 지정
 spring:
   application:
     name: order-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/msaexam # 데이터베이스 URL 설정
-    username: kangheeseung
-    password: 1129
-    driver-class-name: org.postgresql.Driver  # PostgreSQL 드라이버 클래스 설정
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,10 +11,7 @@ spring:
     allow-bean-definition-overriding: true
   data:
     redis:
-      host: localhost
       port: 6379
-      username: heeseung
-      password: 1129
 
 eureka:
   client:
