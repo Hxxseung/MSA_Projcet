@@ -1,3 +1,24 @@
 spring:
-  profiles:
-    active: dev
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
+
+service:
+  jwt:
+    access-expiration: 7200000
+    secret-key: "818b031326f27ad10625ed4fd40d54dd2fa6e154ecb2008f5e67b7cd83f14d738d3a4c0c1bfc5ebfb6eab6661f9412ecd8de6bda0c813ee9800596bf468b382037a8c152a2ed4ab0a25a04f65c22e8a1c90166480ccebfc084b2a17ff39cc54f562cabfd84a716aa57f850d4f494b6e7c72db9cb632b60c9c3c2cdd23a8620b65e70751af648322374dc9c63f0d39d2c224ae07724deb3f3442566644e61f190b44cbbf3c587ab46897ffb5577ab706c5cf7267c6338bba454d971b73b84cb322374925851d58311f1ce3aae3c093ced458b960725e6604131fb99c1836d437081a131fea3ed9bf2703ddf3ec494b1d16a7733748eff434d0fa5a278fd3bb09b354db9bfafc5d297d9813f7f2e73ca01a8130b165de389130dee597c375db6c1f467d8cdb50ecbb0a6e2f5f15b4b088e8ea6a6c9134568935c28ac254922d817663e2225aeee41921a2731615bcfb3d774fe664104c117636663a00446acd73fb7fd16ebc0c12ff2a43ec67626d914e21fb85ba2ce0893598ae50cf229c783f08f8adca20e785a37558e1f03e953e2726964d54d7514fd9749ee38ddb4ec25ba63c6ddf6cc40d6b428344427dc736a11db08c92ca16f25f15d85e733323fb61bc717198da1c942b5f111614de400f9109317562977922abea9b10560694deaac9b6bb83e9bc580c1f29d1aa2b57a4ac76136ad33d89fb4812b0d7ffef4b197aa"
+
+server:
+  port: 19095
