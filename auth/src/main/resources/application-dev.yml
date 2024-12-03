@@ -1,7 +1,5 @@
 # 활성화할 프로필 지정
 spring:
-  application:
-    name: auth
   datasource:
     url: jdbc:postgresql://localhost:5432/msaexam # 데이터베이스 URL 설정
     username: kangheeseung

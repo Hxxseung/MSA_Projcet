@@ -1,6 +1,8 @@
 spring:
-  application:
-    name: auth
+  datasource:
+    url: jdbc:postgresql://your-rds-endpoint.region.rds.amazonaws.com:5432/msaexam
+    username: ${PROD_DB_USERNAME}
+    password: ${PROD_DB_PASSWORD}
 
 eureka:
   client:
